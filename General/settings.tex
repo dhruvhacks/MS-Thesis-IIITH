@@ -1,0 +1,99 @@
+% \long\def\symbolfootnote[#1]#2{\begingroup%
+% \def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+% \renewcommand{\baselinestretch}{1.2}
+\onecolumn
+
+\newcommand{\universityname}{International Institute of Information Technology}
+\newcommand{\universityaddress}{Hyderabad - 500 032, INDIA}
+\newcommand{\thesisdegreeabbreviation}{M.S.}
+\newcommand{\thesisdegree}{Master of Science}
+\newcommand{\thesisdepartment}{Computer Science and Engineering}
+\newcommand{\thesisauthorpreviousdegrees}{B.Tech}
+\newcommand{\thesissupervisor}{Makarand Tapaswi}
+\newcommand{\thesisapprovedby}{\thesissupervisor}
+\newcommand{\thesisauthoraddress}{India}
+\newcommand{\thesissubmissionmonth}{December}
+\newcommand{\thesissubmissionyear}{2023}
+\newcommand{\thesistitle}{Learning Emotions and Mental States in Movie Scenes}
+\newcommand{\thesisauthor}{Dhruv Srivastava}
+\newcommand{\thesistypist}{\thesisauthor}
+\newcommand{\rollnumber}{2021701021}
+\newcommand{\email}{dhruv.srivastava@research.iiit.ac.in}
+\newcommand{\dedicatedto}{my Friends and Family}
+\newcommand{\thesiscommitteesize}{2}
+\newcommand{\thesiscommittee}{Dissertation Committee: TBD}
+
+%%%
+%%% Command for masters theses.  \phdthesis is provided for symmetry.
+%%%
+\newcommand{\mastersthesis}{
+    \renewcommand{\thesistype}{THESIS}
+    \renewcommand{\thesisdegree}{Master of Science}
+    \renewcommand{\thesisdegreeabbreviation}{M.S.}
+    \renewcommand{\thesiscommitteesize}{2}
+    \renewcommand{\thesiscommittee}{Supervising Committee:}}
+\newcommand{\phdthesis}{}
+
+
+%%%% Acronyms
+% Add a period to the end of an abbreviation unless there's one
+% already, then \xspace.
+\makeatletter
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+
+\def\eg{\emph{e.g}\onedot} \def\Eg{\emph{E.g}\onedot}
+\def\ie{\emph{i.e}\onedot} \def\Ie{\emph{I.e}\onedot}
+\def\cf{\emph{cf}\onedot} \def\Cf{\emph{Cf}\onedot}
+\def\etc{\emph{etc}\onedot} \def\vs{\emph{vs}\onedot}
+\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\iid{i.i.d\onedot} \def\wolog{w.l.o.g\onedot}
+\def\etal{\emph{et al}\onedot}
+\makeatother
+
+
+% Blindfootnote
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
+
+%%%% My defined acronyms
+\newcommand{\modelname}{EmoTx}
+\newcommand{\glipsum}[1]{{\color{gray} \lipsum[#1]}}
+
+\renewcommand{\paragraph}[1]{\vspace{1mm}\noindent\textbf{#1}}
+\newcommand{\bbf}{\mathbf{f}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\TE}{\mathbf{TE}}
+\newcommand{\TP}{\mathbf{TP}}
+\newcommand{\TC}{\mathbf{TC}}
+\newcommand{\W}{\mathbf{W}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\pos}{\mathbf{pos}}
+\newcommand{\CLS}{\mathsf{CLS}}
+% \newcommand{\CLS}{\bz}
+\newcommand{\bbR}{\mathbb{R}}
+
+\newcommand{\MM}{\mathcal{M}}
+\newcommand{\MU}{\mathcal{U}}
+\newcommand{\MD}{\mathcal{D}}
+\newcommand{\MV}{\mathcal{V}}
+\newcommand{\MS}{\mathcal{S}}
+\newcommand{\mcT}{\mathcal{T}}
+\newcommand{\MH}{\mathcal{H}}
+\newcommand{\ME}{\mathcal{E}}
+\newcommand{\MF}{\mathcal{F}}
+\newcommand{\MC}{\mathcal{C}}
+\newcommand{\MR}{\mathcal{R}}
+\newcommand{\MP}{\mathcal{P}}
+\newcommand{\MB}{\mathcal{B}}
+\newcommand{\ML}{\mathcal{L}}
+\newcommand{\MG}{\mathcal{G}}
+
+\newcommand{\dingcheck}{\ding{51}}
