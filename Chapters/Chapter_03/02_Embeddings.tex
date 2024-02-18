@@ -1,0 +1,48 @@
+\section{Additional embeddings}
+\label{sec:embeddings}
+Token representations in a Transformer often combine the core information (\eg~visual representation) with meta information such as the timestamp through position embeddings (\eg~\cite{videobert}). This section lists all the embeddings that are used in EmoTx.
+ 
+\paragraph{Modality Embeddings}:
+We learn three embedding vectors $\bE^{\MM} \in \bbR^{D \times 3}$ to capture the three modalities corresponding to (1)~video, (2)~characters, and (3)~dialog utterances.
+We also assist the model in identifying tokens coming from characters by including a special character count embedding, $\bE^C \in \bbR^{D \times N}$.
+Note that the modality and character embeddings do not encode any specific meaning or imposed order (\eg~higher to lower appearance time, names in alphabetical order) - we expect the model to use this only to distinguish one modality/character from the other.
+
+\paragraph{Time embeddings}:
+The number of tokens depend on the chosen frame-rate.
+% \AK{for the given scene, $\MS$}.
+To inform the model about relative temporal order across modalities, we adopt a discrete time binning strategy that translates real time (in seconds) to an index.
+Thus, video frame/segment and character box representations fed to the Transformer are associated with their relevant time bins.
+For an utterance $u_j$, binning is done based on its middle timestamp $t_j$.
+We denote the time embeddings as $\bE^T \in \bbR^{D \times \lceil T^* / \tau \rceil}$, where $T^*$ is the maximum scene duration and $\tau$ is the bin step.
+For convenience, $\bE^T_t$ selects the embedding using a discretized index $\lceil t / \tau \rceil$.
+
+\paragraph{Classifier tokens}:
+Similar to the classic $\CLS$ tokens in Transformer models~\cite{roberta, vit} we use learnable classifier tokens to predict the emotions.
+Furthermore, inspired by Query2Label~\cite{q2l}, we use $K$ classifier tokens rather than tapping a single token to generate all outputs (see Fig.~\ref{fig:model_overview}D).
+This allows capturing label co-occurrence within the Transformer layers improving performance.
+It also enables analysis of per-emotion attention scores providing insights into the model's workings.
+In particular, we use $K$ classifier tokens for scene-level predictions (denoted $\bz_k^{\MS}$) and $N \times K$ tokens for character-level predictions (denoted $\bz_k^i$ for character $\MP^i$, one for each character-emotion pair).
+
+\paragraph{Token representations}:
+Combining the features with relevant embeddings provides rich information to \modelname.
+The token representations for each input group are as follows:
+\allowdisplaybreaks
+\begin{align}
+\text{scene cls. tokens: }
+\label{eq:scene_cls_token}
+& \tilde{\bz}_k^{\MS} = \bz_k^{\MS} + \bE^{\MM}_1, \\
+\label{eq:char_cls_token}
+\text{char. cls. tokens: }
+& \tilde{\bz}_k^i = \bz_k^i + \bE^{\MM}_2 + \bE^C_i, \\
+\label{eq:video_token}
+\text{video: }
+& \tilde{\bbf}_t = \bW_\MV \bbf_t + \bE^{\MM}_1 + \bE^T_t, \\
+\label{eq:char_token}
+\text{character box: }
+& \tilde{\bc}_t^i = \bW_\MC \bc_t^i + \bE^{\MM}_2 + \bE^C_i + \bE^T_t, \\
+\label{eq:utterance_token}
+\text{and utterance: }
+& \tilde{\bu}_j = \bW_\MU \bu_j + \bE^{\MM}_3 + \bE^T_{t_j} \, .
+\end{align}
+Fig.~\ref{fig:model_overview}B illustrates this addition of embedding vectors.
+We also perform LayerNorm~\cite{layernorm} before feeding the tokens to the Transformer encoder layers, not shown for brevity.

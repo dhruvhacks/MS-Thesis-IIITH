@@ -1,0 +1,20 @@
+\section{Training and Inference}
+\label{sec:traineval}
+\paragraph{Training.}
+\modelname{} undergoes end-to-end training with the \emph{BinaryCrossEntropy} (BCE) loss. This comprehensive approach considers the entire model architecture for optimization. The primary objective is to equip \modelname{} with the capability to seamlessly understand and predict emotions within the diverse context of movie scenes.
+
+The BCE loss function serves as the guiding force during \modelname's training. This loss function is well-suited for binary classification tasks, aligning with our goal of predicting emotions in a binary fashion. It quantifies the difference between predicted and ground truth labels, steering the model towards more accurate emotion predictions.
+
+\modelname{} encounters the challenge of class imbalance, where certain emotional labels may be overrepresented or underrepresented in the training data. To counteract this imbalance, we introduce weights ($\omega_k$) for positive labels. These weights are determined based on the inverse of proportions, strategically assigning higher weights to underrepresented emotional classes. This thoughtful adjustment ensures that \modelname{} pays due attention to all emotional categories, preventing bias towards frequently occurring labels and enhancing its sensitivity to the diversity of emotions present in movie scenes.
+
+The scene and character prediction losses are combined as
+\begin{equation}
+\ML = \sum_{k=1}^K \texttt{BCE}(\omega_k, y^{\MV}_k, \hat{y}_k^{\MS}) + \sum_{i=1}^N \sum_{k=1}^K \texttt{BCE}(\omega_k, y^{\MP^i}_k, \hat{y}_k^i) \, .
+\end{equation}
+
+\paragraph{Inference.}
+At test time, we follow the procedure outlined in Sec.~\ref{sec:backbones}, \ref{sec:embeddings}, \ref{sec:transformer} and generate emotion label estimates for the entire scene and each character as indicated in Eq.~\ref{eq:predictions}.
+
+\paragraph{Variations.}
+As we will see empirically, our model is very versatile and well suited for adding/removing modalities or additional representations by adjusting the width of the Transformer (number of tokens).
+It can be easily modified to act as a unimodal architecture that applies only to video or dialog utterances by disregarding other modalities.

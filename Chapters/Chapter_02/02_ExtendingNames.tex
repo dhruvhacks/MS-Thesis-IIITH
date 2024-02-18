@@ -1,0 +1,11 @@
+\section{Assigning character names to the new character tracks}
+\label{sec:assigning_names}
+In the process of assigning names to new character tracks, we begin with the existing tracks in the MovieGraphs dataset, which exclusively pertain to faces. These original tracks provide a foundation for understanding the characters emotions and mental states in the scenes. Now, when we identify new face tracks, we want to connect them to the existing dataset to leverage the character names already associated with those faces.
+
+To achieve this, we compare each new face detection with the original tracks by assessing the degree of overlap between them. This overlap is quantified using a metric called Intersection over Union (IoU), a measure that helps us determine how much the new detection aligns with the original track. We've set a threshold of 0.7 for IoU, meaning that we consider a match only when the overlap is substantial, ensuring a reliable connection.
+
+Once we identify these matches, the next step involves associating the names from the original track with the corresponding new track. This association is based on the idea that if a face in the new detection aligns significantly with a face in the original track, they likely represent the same character.
+
+Now, given that there might be multiple names associated with faces in the original track, we employ a democratic approach—a majority vote. This means that if a new track is linked to several names from the original track, we choose the name that the majority of these associations agree upon. In simpler terms, it's like asking a group of people for their opinion and going with the name that most people think fits the best.
+
+In summary, this method allows us to seamlessly transfer character names from the original MovieGraphs dataset to the new character tracks we've identified, enhancing the richness of our character analysis in the broader context of the movie scenes.

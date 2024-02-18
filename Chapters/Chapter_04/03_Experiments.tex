@@ -1,0 +1,107 @@
+\section{Ablation Studies}
+\label{sec:abl}
+We perform ablations across three main dimensions: architectures, modalities, and feature backbones.
+When not mentioned, we adopt the defaults:
+(i)~MViT trained on Kinetics400 dataset to represent video;
+(ii)~ResNet50 trained on SFEW, FER, and VGGFace for character representations;
+(iii)~fine-tuned RoBERTa for dialog utterance representations; and
+(iv)~\modelname{} with appropriate masking to pick modalities or change the number of classifier tokens.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=1.05\linewidth,height=5cm]{Figures/t25_APs_sorted.pdf}
+\vspace{-10mm}
+\caption{Comparing scene-level per class AP of \modelname{} against baselines (Table~\ref{tab:arch_abl}) shows consistent improvements.
+We also see that our model with $K$ classifier tokens outperforms the 1 CLS token on most classes.
+AP of the best model is indicated above the bar.
+Interestingly, the order in which emotions are presented is not the same as the frequency of occurrence (see~\ref{fig:emotionFrequency}).}
+\vspace{-2mm}
+\label{fig:per_class_ap}
+\end{figure*}
+
+\input{Tables/arch_abl}
+\input{Tables/modal_abl}
+\input{Tables/suppl_feat_abl}
+
+\subsection{Architecture ablations}
+\label{sec:abl:arch}
+We compare our architecture against simpler variants in Table~\ref{tab:arch_abl}.
+The first row sets the expectation by providing scores for a \emph{random} baseline
+that samples label probabilities from a uniform random distribution between $[0, 1]$ with 100 trials.
+Next, we evaluate \emph{MLP (2 Lin)}, a simple MLP with two linear layers with inputs as max pooled scene or character features.
+An alternative to max pooling is self-attention.
+The \emph{Single Tx encoder} performs self-attention over features (as tokens) and a classifier token to which a multi-label classifier is attached.
+Both these approaches are significantly better than random, especially for individual character level predictions which are naturally more challenging than scene-level predictions. Finally, we compare multimodal \modelname{} that uses 1 classifier token to predict all labels (\modelname: 1 CLS) against $K$ classifier tokens (last row).
+Both models achieve significant improvements, \eg~in absolute points, +8.5\% for Top-10 scene labels and +2.3\% for the much harder Top-25 character level labels.
+We believe the improvements reflect \modelname{}'s ability to encode multiple modalities in a meaningful way.
+Additionally, the variant with $K$ classifier tokens (last row) shows small but consistent +0.5\% improvements over 1 classifier token on Top-25 emotions.
+
+Fig.~\ref{fig:per_class_ap} shows the scene-level AP scores for the Top-25 labels.
+Our model outperforms the MLP and Single Tx encoder on 24 of 25 labels and outperforms the single classifier token variant on 15 of 25 labels.
+\modelname{} is good at recognizing expressive emotions such as \emph{excited, serious, happy} and even mental states such as \emph{friendly, polite, worried}.
+However, other mental states such as \emph{determined} or \emph{helpful} are challenging.
+
+
+\subsection{Modality ablations}
+\label{sec:abl:modality}
+We evaluate the impact of each modality (video, characters, and utterances) on scene- and character-level emotion prediction in Table~\ref{tab:modal_abl}.
+We observe that the character modality (row 4, R4) outperforms any of the video or dialog modalities (R1-R3).
+Similarly, dialog features (R3) are better than video features (R1, R2), common in movie understanding tasks~\cite{moviegraphs, movieqa}.
+
+Interistingly, we also observe that having additional modality does not always help and the choice of feature backbone is important to get the desired results.
+Scene features $V_r$, extracted from ResNet50 pretrained on Places365 dataset, which are more representative of the environment where the movie scenes may be happening, are consistently worse than action features $V_m$, which are extracted from a MViT\_v1 model pretrained on Kinetics400 dataset and is expected to be more representative of the actions happening within the movie scenes. Comparing R1, R2 or R5, R6 or R8, R9 reflect that $V_m$ assists model and works well with character and scene modalities for emotion recognition whereas $V_r$ makes it difficult for model to desipher emotions.
+
+Finally, our observations reveal that the utilization of all modalities (R9) yields superior performance compared to other combinations. This outcome strongly suggests that the task of emotion recognition is inherently multimodal.
+
+\subsection{Backbone ablations}\
+\label{sec:abl:backbones}
+We compare several backbones for the task of emotion recognition. \\
+(i) MViT\_V1 model~\cite{FanMViT2021} pre-trained on Kinetics400~\cite{CarreiraQuoVadis2017} dataset, ResNet50~\cite{resnet} pre-trained on Places365 dataset~\cite{places365} and ResNet152~\cite{resnet} pre-trained on ImageNet dataset~\cite{imagenet} for video features.\\
+(ii) ResNet50~\cite{facefeat} pre-trained on FER~\cite{fer13}, SFEW~\cite{sfew} and VGGFace~\cite{vggface} datasets, VGG-m~\cite{facefeat} pre-trained on FER13~\cite{fer13} dataset and InceptionResNetV1~\cite{SzegedyInceptionNet2015} pre-trained on VGGFace2~\cite{CaoVGGF22018} dataset for character features; and \\
+(iii) A pre-trained and finetuned version on RoBERTa for dialogue features.
+
+The effectiveness of the fine-tuned RoBERTa model is evident by comparing pairs of rows R6, R12 and R5, R15 and R3, R13 of Table~\ref{tab:feat_abl}, where we see a consistent improvement of 1-3\%.
+Character representations with ResNet50-FER show improvement over VGGm-FER as seen from R11, R18 or R15, R17.
+Finally, comparing R17, R18 shows the benefits provided by action features as compared to places.
+
+In conclusion, ResNet50 trained on FER appears to be a good representation for characters, and the MViT trained on Kinetics400 provides better results for both the label sets, while ResNet50 trained on Places365 is a close second.
+
+\subsection{SoTA Comparison}
+\label{sec:sota}
+
+\input{Tables/suppl_scene_sota_abl}
+\input{Tables/suppl_char_sota_abl}
+
+We compare our model against published works 
+EmotionNet~\cite{WeiEmotionNet},
+CAER~\cite{caer}, 
+AttendAffectNet~\cite{attendaffectnet}, and
+M2Fnet~\cite{m2fnet}
+by adapting them for our tasks.
+
+\paragraph{EmotionNet}~\cite{WeiEmotionNet}
+employs a joint embedding training approach that aligns learned text embeddings, obtained through the word2vec model~\cite{MikolovWord2Vec}, with image embeddings extracted from a ResNet50 backbone. For our adaptation, we utilize the same backbones. Since we use video as input, the frame features are max-pooled to generate a consolidated representation. The embedding loss is applied, with emotion labels serving as keywords for joint embedding training. The ResNet50 is then fine-tuned for multilabel emotion recognition, where individual frame features undergo max-pooling before reaching the logits layer.
+
+\paragraph{CAER (Context Aware Emotion Recognition)}~\cite{caer}
+is a deep Convolutional Network which consists of two stream encoding networks to separately extract the facial and context features which are fused using an adaptive fusion network.
+Detections from our extended face tracks are used as inputs for the face encoding stream and the full video frame with masked faces was used as input to context encoding stream.
+Since CAER is designed to extract emotions from images we adapt it to videos by applying max-pooling over the fused features from both the streams to generate a single representation for a video.
+This adapted model is trained to predict multiple scene-level emotions.
+
+\paragraph{M2FNet}~\cite{m2fnet}
+is a transformer based model originally developed for Emotion Recognition in Conversations (ERC) and features a fusion-attention mechanism to modulate the attention given to each utterance considering the audio and visual features.
+As this model is designed for utterance emotion recognition we apply a max-pooling operation over the final outputs of fusion attention module to generate a feature representation for all the utterances in a video.
+Since this model provides two strategies to consider visual features: one with the video frame and another that combines multiple faces in a frame, we use them to predict either scene- or character-level emotions separately.
+
+\paragraph{AttendAffectNet}~\cite{attendaffectnet}
+proposes two multi-modal self-attention based approaches for predicting emotions from movie clips. We adapted the proposed Feature AttendAffectNet model in our work.
+It leverages the transformer encoder block where every input token represents a different modality. These modality feature vectors are generated by average pooling over respective features. Following the proposed mechanism, a classification head was attached at the end of the model for predicting multi-label emotions.
+We adopt the same backbone representations, MViT~\cite{FanMViT2021} pre-trained on Kinetics400~\cite{CarreiraQuoVadis2017} and ResNet50 pretrained on FER13~\cite{fer13}, for their work to extract scene and face features respectively.
+
+Table~\ref{tab:sota_scene_abl} shows scene-level performance while the character-level performance is presented in Table~\ref{tab:char_sota_abl}.
+First, we note that the test set seems to be harder than val as also indicated by the random baseline, leading to a performance drop from val to test across all approaches.
+\modelname{} outperforms all previous baselines by a healthy margin.
+For scene level, we see +4.6\% improvement on Emotic labels, +7.8\% on Top-25, and +9.7\% on Top-10.
+Character-level predictions are more challenging, but we see consistent improvements of +1.5-3\% across all label sets.
+Matching expectation, we see that simpler models such as EmotionNet or CAER perform worse than Transformer-based approaches of M2Fnet and AttendAffectNet.
+Note that EmotionNet and CAER are challenging to adapt for character-level predictions and are not presented, but we expect M2Fnet or AttendAffectNet to outperform them.

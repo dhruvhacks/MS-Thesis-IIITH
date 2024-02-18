@@ -1,0 +1,22 @@
+\section{Multimodal emotion recognition methods}
+\label{sec:multimodalEmoRecog}
+The realm of multimodal emotion recognition has witnessed the application of various methodologies, each attempting to harness the synergies between audio, visual, and textual data for a holistic understanding of emotional expressions. In this section, we provide an overview of prevalent methods, drawing inspiration from early techniques to recent advancements.
+
+\paragraph{Recurrent Neural Networks (RNNs) and Graph Networks}:
+RNNs have played a pivotal role in Emotion Recognition in Conversations (ERC)~\cite{wollmer2010textContext, dialogRNN, jiao2020HMN, sivaprasad2018icmr}, particularly when coupled with graph networks~\cite{ghosal2019dialoguegcn, zhang2019erc}. This combination has proven effective in amalgamating information from audio, visual, and textual modalities. The sequential nature of RNNs facilitates capturing temporal dependencies in emotional expressions, allowing for nuanced understanding.
+
+\paragraph{Transformational Leap with Transformers}:
+Inspired by the remarkable success of Transformer architectures in various natural language processing tasks, they have found adoption in the domain of ERC~\cite{m2fnet, shen2021dialogXL}. Transformers offer advantages in modeling long-range dependencies and capturing contextual information effectively. Recent approaches leverage these architectures to enhance the performance of multimodal emotion recognition systems.
+
+\paragraph{External Knowledge Graphs and Topic Modeling}:
+To imbue systems with commonsense knowledge, some methods incorporate external knowledge graphs~\cite{cosmic}. Additionally, the integration of topic modeling with Transformers has shown promise in improving the accuracy of emotion recognition models~\cite{todkat}. These techniques go beyond raw data and tap into external knowledge sources for a more nuanced understanding of emotional expressions.
+
+\paragraph{Challenges in Multi-Label Prediction}:
+Efforts have been made to extend multimodal emotion recognition to the realm of multi-label prediction by considering a sequence-to-set approach~\cite{zhang2020multilabelEmotionDet}. However, this approach, often employed for multi-label scenarios, may face scalability challenges with an increasing number of labels. This scalability concern underscores the need for innovative approaches to handle a diverse and expansive set of emotional and mental state labels.
+
+\paragraph{Our method- EmoTx~\cite{dhruv2023emotx}}:
+In our research, we adopt a Transformer-based architecture for joint modeling, aligning with the latest trends in multimodal emotion recognition. However, our focus diverges from traditional ERC, as we aim to predict emotions and mental states specifically within the context of movie scenes and characters.
+We adapt and compare our approach against some of the methods mentioned above in our experiments, evaluating their efficacy in the unique context of movie emotion and mental state prediction. By leveraging insights from established techniques, we aim to contribute to the evolving landscape of multimodal emotion recognition, with a particular emphasis on cinematic storytelling.
+
+\paragraph{Related Approaches in Movie Understanding}:
+Close to our work, the MovieGraphs dataset~\cite{moviegraphs} has been utilized for emotion annotations, focusing on tracking changing emotions across entire movies and proposing methods for Temporal Emotion Localization. However, it's noteworthy that the former typically tracks a single emotion in each scene, while the latter introduces a distinct direction by exploring the temporal dynamics of emotions in movies.

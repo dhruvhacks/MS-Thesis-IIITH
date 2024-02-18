@@ -1,0 +1,21 @@
+\section{Multi-label Emotion and Mental State Recognition}
+\label{subsec:ps}
+
+We assume that movies have been segmented automatically~\cite{local2global_sceneseg} or with a human-in-the-loop process~\cite{tapaswi2014storygraphs, moviegraphs} into coherent \emph{scenes} that are self-contained and describe a short part of the story.
+
+Consider such a movie scene $\MS$ that consists of a set of video frames $\MV$, characters $\MC$, and dialog utterances $\MU$.
+Let us denote the set of video frames as $\MV = \{f_t\}_{t=1}^T$, where $T$ is the number of frames after sub-sampling.
+Multiple characters often appear in any movie scene.
+We model $N$ characters in the scene as $\MC = \{\MP^i\}_{i=1}^{N}$, where each character $\MP^i = \{(f_t, b_t^i)\}$ may appear in some frame $f_t$ of the video at the spatial bounding box $b_t^i$.
+We assume that $b_t^i$ is empty if the character $\MP^i$ does not appear at time $t$.
+Finally, $\MU = \{u_j\}_{j=1}^{M}$ captures the dialog utterances in the scene.
+For this work, we use dialogs directly from subtitles and thus assume that they are unnamed.
+While dialogs may be named through subtitle-transcript alignment~\cite{buffy}, scripts are not always available or reliable for movies.
+
+\paragraph{Task formulation.}
+Given a movie scene $\MS$ with its video, character, and dialog utterance,
+we wish to predict the emotions \emph{and} mental states (referred as labels, or simply emotions) at both the scene, $\by^{\MV}$,
+and per-character, $\by^{\MP^i}$, level.
+We formulate this as a multi-label classification problem with $K$ labels, \ie~$\by = \{y_k\}_{k=1}^K$.
+Each $y_k\ {\in}\ \{0, 1\}$ indicates the absence or presence of the $k^\text{th}$ label in the scene $y_k^\MV$ or portrayed by some character $y_k^{\MP^i}$.
+For datasets with character-level annotations, scene-level labels are obtained through a simple logical \texttt{OR} operation, \ie~$\by^{\MV} = \bigoplus_{i=1}^{N}\by^{\MP^i}$.

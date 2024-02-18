@@ -1,0 +1,22 @@
+\section{Face clustering and naming other tracks.}
+\label{sec:face_clustering}
+In our effort to extract dense face tracks from MovieGraphs dataset~\cite{moviegraphs}, we encountered a challenge: not all characters could be given names using the tricks discussed till now because some detections were missed in the dataset itself. To fix this, we introduced a clustering method to find names for the new characters we discovered.
+
+\paragraph{Identity Features Extraction}:
+Our process commences with the extraction of robust identity features using the individual face detections. To achieve this, we leverage an InceptionResNetV1 model~\cite{SzegedyInceptionNet2015} pretrained on the VGGFace2~\cite{CaoVGGF22018} dataset. These features serve as distinctive representations for each face, capturing nuanced characteristics crucial for identity clustering.
+
+\paragraph{Clustering with C1C~\cite{c1c} Algorithm}:
+For clustering, we employ the C1C~\cite{c1c} algorithm, which incorporates track information to establish must and cannot links between the extracted face features. This integration of track information ensures that the clustering process is sensitive to the temporal continuity of faces, enhancing the accuracy of identity assignments.
+
+\paragraph{Silhouette Score and Representative Partition}:
+The C1C~\cite{c1c} algorithm generates multiple partitions, each containing varying numbers of clusters. To determine the most representative partition, we calculate the Silhouette score for each partition. The partition with the highest Silhouette score is selected, signifying optimal cluster cohesion and separation.
+
+\paragraph{Probability Assignment to Clusters}:
+Now, based on the character names assigned through the earlier method, each cluster is endowed with a probability distribution corresponding to the distinct names found within the cluster. In cases where a cluster lacks any named detection, an equal probability is distributed across all names present in the scene.
+
+\paragraph{Name Probability Thresholding}:
+The cluster name-probabilities corresponding to the detections of unnamed tracks are then extracted. To consolidate these probabilities, we calculate the average of these soft scores, reflecting the likelihood of each name for the newly discovered tracks. This process yields name probabilities for the extended tracks.
+
+In the final step, a threshold of 0.7 is applied to these name probabilities to select the definitive name for the new tracks. This ensures that only names with a high confidence level are assigned to the extended character tracks.
+
+With this method, we're making sure that even the characters we missed at first get names, helping us better understand and analyze emotions in the extended MovieGraphs~\cite{moviegraphs} face tracks.

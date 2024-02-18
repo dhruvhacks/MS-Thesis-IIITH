@@ -1,0 +1,19 @@
+\section{Preparing multimodal representations}
+\label{sec:backbones}
+Recognizing complex emotions and mental states (\eg~\emph{nervous, determined}) requires going beyond facial expressions to understand the larger context of the story.
+To facilitate this, we encode multimodal information through multiple lenses: \\
+(i)~the video is encoded to capture where and what event is happening. \\
+(ii)~the character faces are encoded to represent their expressions; and \\
+(iii)~we encode the dialog utterances as information complementary to the visual domain.
+
+A pretrained encoder $\phi_{\MV}$ extracts relevant visual information from a single or multiple frames as $\bbf_t = \phi_{\MV}(\{f_t\})$.
+Similarly, a pretrained language model $\phi_\MU$ extracts dialog utterance representations as $\bu_j = \phi_{\MU}(u_j)$.
+Characters are more involved as we need to first localize them in the appropriate frames.
+Given a valid bounding box $b_t^i$ for person $\MP^i$, we extract character features using a backbone pretrained for emotion recognition as $\bc_t^i = \phi_\MC(f_t, b_t^i)$.
+
+\paragraph{Linear projection.}
+Since the extracted features have different embeddings dimensions, we first bring all modalities to the same dimension with linear layers.
+Specifically, we project visual representation
+$\bbf_t \in \bbR^{D_{\MV}}$ using $\bW_\MV \in \bbR^{D \times D_\MV}$,
+utterance representation $\bu_j \in \bbR^{D_{\MU}}$ using $\bW_\MU \in \bbR^{D \times D_\MU}$, and
+character representation $\bc_t^i \in \bbR^{D_{\MC}}$ using $\bW_\MC \in \bbR^{D \times D_\MC}$.

@@ -1,0 +1,44 @@
+\section{Implementation Details}
+\label{sec:impl}
+\paragraph{Feature representations}
+\label{subsec:exp:impl:feat_ext}
+play a major role on the performance of any model.
+We describe different backbones used to extract features for video frames, characters, and dialog.
+
+\underline{Video} features $\bbf_t$:
+The visual context is important for understanding emotions~\cite{emotic, caer, emoticon}.
+We extract spatial features using ResNet152~\cite{resnet} trained on ImageNet~\cite{imagenet},
+ResNet50~\cite{resnet} trained on Place365~\cite{places365}, and
+spatio-temporal features, MViT~\cite{FanMViT2021} trained on Kinetics400~\cite{CarreiraQuoVadis2017}.
+
+\underline{Dialo}g features $\bu_j$:
+Each utterance is passed through a RoBERTa-Base encoder~\cite{roberta} to obtain an utterance-level embedding.
+We also extract features from a RoBERTa model fine-tuned for the task of multi-label emotion classification (based on dialog only).
+
+\underline{Character} features $\bc_t^i$:
+are represented based on face or person detections.
+We perform face detection with MTCNN~\cite{mtcnn} and person detection with Cascade RCNN~\cite{cascadercnn} trained on MovieNet~\cite{movienet}.
+Tracks are obtained using SORT~\cite{sort}, a simple Kalman filter based algorithm, and clusters using C1C~\cite{c1c}.
+Details of the character processing pipeline are presented in Chapter~\ref{ch:char_track_extension}. 
+ResNet50~\cite{facefeat} trained on SFEW~\cite{sfew} and pretrained on FER13~\cite{fer13} and VGGFace~\cite{vggface},
+VGGm~\cite{facefeat} trained on FER13 and pretrained on VGGFace, and InceptionResnetV1~\cite{SzegedyInceptionNet2015} trained on VGGFace2~\cite{CaoVGGF22018} are used to extract face representations.
+
+\paragraph{Frame sampling strategy}:
+We sample up to $T {=} 300$ tokens at 3 fps (100s) for the video modality.
+This covers $\sim$99\%
+of all movie scenes.
+Our time embedding bins are also at 3 per second, \ie~$\tau {=} 1/3$s.
+During inference, a fixed set of frames are chosen, while during training, frames are randomly sampled from 3 fps intervals which acts as data augmentation.
+Character tokens are treated in a similar fashion, however are subject to the character appearing in the video.
+
+\paragraph{Architecture details}:
+We experiment with the number of encoder layers, $H\ {\in}\ \{1, 2, 4, 8\}$, but find $H {=} 2$ to work best (perhaps due to the limited size of the dataset).
+Both the layers have same configuration - 8 attention heads with hidden dimension of 512.
+The maximum number of characters is $N{=}4$ as it covers up to 91\% of the scenes.
+Tokens are padded to create batches and to accommodate shorter video clips.
+Appropriate masking prevents self-attention on padded tokens.
+Put together, \modelname{} encoder looks at $K$ scene classification tokens, $T$ video tokens, $N \cdot (K + T)$ character tokens, and $T$ utterance tokens.
+For $K{=}25, N{=}4$ (Top-25 label set), this is up to 1925 padded tokens.
+
+\paragraph{Training details}:
+\modelname{} is implemented in PyTorch~\cite{pytorch}, a versatile deep learning framework. TheThe training process is conducted on a single NVIDIA GeForce RTX-2080 Ti GPU, optimizing computational efficiency. We set a maximum training duration of 50 epochs, each comprising a batch size of 8 samples. The hyperparameters are thoughtfully tuned to attain optimal performance on the validation set. For optimization, we employ the Adam optimizer~\cite{adam}, a robust choice for fine-tuning model parameters. The initial learning rate is set at $5 \times 10^{-5}$, establishing an effective starting point for the training process. To dynamically adjust the learning rate during training, we incorporate the \texttt{ReduceLROnPlateau} learning rate scheduler, a mechanism that reduces the learning rate by a factor of 10 when the model's performance plateaus. Throughout the training process, the model continually refines its understanding of emotional dynamics in movie scenes and character interactions. The effectiveness of the training is evaluated based on the geometric mean of scene and character mean Average Precision (mAP). The best checkpoint, representing the model's peak performance, is determined by maximizing this geometric mean. This approach ensures that EmoTx not only excels in capturing emotional nuances within individual scenes but also adeptly handles the complexities of character-level emotion prediction, contributing to its overall effectiveness in understanding emotions in movie scenes.
