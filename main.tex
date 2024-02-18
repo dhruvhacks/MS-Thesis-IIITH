@@ -1,0 +1,67 @@
+\documentclass[11pt]{book}
+\input{General/preamble} % Loads in the preamble
+\input{General/settings} % Loads in the new commands and additional settings
+
+\begin{document}
+\pagenumbering{roman}
+
+%%%% Thesis base pages
+\input{Pages/A_titlePage}
+\input{Pages/B_copywrite_page}
+\input{Pages/C_certificate}
+\input{Pages/D_dedication}
+
+\renewcommand{\baselinestretch}{1.5}
+
+%%%% Additional Pages
+\input{Pages/E_acknowledgements}
+\input{Pages/F_abstract}
+
+%%%% TABLE OF CONTENTS
+{\hypersetup{linkcolor=black} % Keeps the ToC black even with non-black linkcolor
+\tableofcontents\thispagestyle{empty}}
+\newpage
+
+%%%% LIST OF TABLES
+{\hypersetup{linkcolor=black} % Keeps the list of tables black even with non-black linkcolor
+\listoftables\thispagestyle{empty}}
+\newpage
+
+%%%% LIST OF FIGURES
+{\hypersetup{linkcolor=black} % Keeps the list of figures black even with non-black linkcolor
+\listoffigures\thispagestyle{empty}}
+\newpage
+
+%%%% Thesis chapters
+\input{Chapters/Chapter_01/00_Introduction}
+\input{Chapters/Chapter_01/01_Motivation}
+\input{Chapters/Chapter_01/02_MovieUnderstanding}
+\input{Chapters/Chapter_01/03_VisualEmotionRecog}
+\input{Chapters/Chapter_01/04_MultimodalDatasets}
+\input{Chapters/Chapter_01/05_MultiModalEmoRecog}
+\input{Chapters/Chapter_01/06_ProblemStatement}
+
+\input{Chapters/Chapter_02/00_Introduction}
+\input{Chapters/Chapter_02/01_CharacterDetection}
+\input{Chapters/Chapter_02/02_ExtendingNames}
+\input{Chapters/Chapter_02/03_FaceClustering}
+
+\input{Chapters/Chapter_03/00_Introduction}
+\input{Chapters/Chapter_03/01_FeatureExtraction}
+\input{Chapters/Chapter_03/02_Embeddings}
+\input{Chapters/Chapter_03/03_Transformer}
+\input{Chapters/Chapter_03/04_TrainAndInference}
+
+\input{Chapters/Chapter_04/00_Introduction}
+\input{Chapters/Chapter_04/01_DataAndSetup}
+\input{Chapters/Chapter_04/02_Implementation}
+\input{Chapters/Chapter_04/03_Experiments}
+\input{Chapters/Chapter_04/04_QualitativeAnalysis}
+
+\input{Chapters/Chapter_05/00_Conclusion}
+
+%%%% Bibliography
+\bibliographystyle{IEEEtran}
+\bibliography{Bibliography/longstrings,Bibliography/main}
+
+\end{document}

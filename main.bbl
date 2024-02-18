@@ -1,0 +1,470 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{mtcnn}
+K.~Zhang, Z.~Zhang, Z.~Li, and Y.~Qiao, ``{Joint Face Detection and Alignment
+  using Multi-task Cascaded Convolutional Networks},'' \emph{IEEE Signal
+  Processing Letters}, pp. 1499--1503, 2016.
+
+\bibitem{dhruv2023emotx}
+D.~Srivastava, A.~K. Singh, and M.~Tapaswi, ``{How you feelin'? Learning
+  Emotions and Mental States in Movie Scenes},'' in \emph{IEEE/CVF Conference
+  on Computer Vision and Pattern Recognition (CVPR)}, 2023.
+
+\bibitem{moviegraphs}
+P.~Vicol, M.~Tapaswi, L.~Castrejon, and S.~Fidler, ``{MovieGraphs: Towards
+  Understanding Human-Centric Situations from Videos},'' in \emph{Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, 2018.
+
+\bibitem{cicero-emo}
+A.~M. Schmitter, ``{17th and 18th Century Theories of Emotions},'' in \emph{The
+  {Stanford} Encyclopedia of Philosophy}, 2021.
+
+\bibitem{progbrainres}
+J.~E. LeDoux, ``{Evolution of Human Emotions},'' \emph{Progress in Brain
+  Research}, vol. 195, pp. 431--442, 2013.
+
+\bibitem{plutchik}
+R.~Plutchik, ``{A General Pscychoevolutionary Theory of Emotion},''
+  \emph{Theories of Emotion}, pp. 3--33, 1980.
+
+\bibitem{Ekman1971}
+P.~Ekman and W.~V. Friesen, ``Constants across cultures in the face and
+  emotion.'' \emph{Journal of personality and social psychology}, pp. 124--9,
+  1971.
+
+\bibitem{clore1987affectivelexicon}
+G.~L. Clore, A.~Ortony, and M.~A. Foss, ``{The Psychological Foundations of the
+  Affective Lexicon},'' \emph{Journal of Personality and Social Psychology},
+  vol.~53, no.~4, pp. 751--766, 1987.
+
+\bibitem{emotic}
+R.~Kosti, J.~M. Alvarez, A.~Recasens, and A.~Lapedriza, ``{Emotion recognition
+  in context},'' in \emph{Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2017.
+
+\bibitem{caer}
+J.~Lee, S.~Kim, S.~Kim, J.~Park, and K.~Sohn, ``{Context-aware Emotion
+  Recognition Networks},'' in \emph{Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, 2019.
+
+\bibitem{emoticon}
+T.~Mittal, P.~Guhan, U.~Bhattacharya, R.~Chandra, A.~Bera, and D.~Manocha,
+  ``{EmotiCon: Context-Aware Multimodal Emotion Recognition using Frege's
+  Principle},'' in \emph{Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2020.
+
+\bibitem{poria2019meld}
+S.~Poria, D.~Hazarika, N.~Majumder, G.~Naik, E.~Cambria, and R.~Mihalcea,
+  ``{MELD: A Multimodal Multi-Party Dataset for Emotion Recognition in
+  Conversations},'' in \emph{Association of Computational Linguistics (ACL)},
+  2019.
+
+\bibitem{dialogRNN}
+N.~Majumder, S.~Poria, D.~Hazarika, R.~Mihalcea, A.~Gelbukh, and E.~Cambria,
+  ``{DialogueRNN: An Attentive RNN for Emotion Detection in Conversations},''
+  in \emph{Association for the Advancement of Artificial Intelligence (AAAI)},
+  2019.
+
+\bibitem{todkat}
+L.~Zhu, G.~Pergola, L.~Gui, D.~Zhou, and Y.~He, ``{Topic-Driven and
+  Knowledge-Aware Transformer for Dialogue Emotion Detection},'' in
+  \emph{International Joint Conference on Natural Language Processing
+  (IJCNLP)}, 2021.
+
+\bibitem{BaveyeLIRIS}
+Y.~Baveye, E.~Dellandrea, C.~Chamaret, and L.~Chen, ``{LIRIS-ACCEDE: A video
+  database for affective content analysis},'' \emph{IEEE Transactions on
+  Affective Computing}, pp. 43--55, 2015.
+
+\bibitem{affect2mm}
+T.~Mittal, P.~Mathur, A.~Bera, and D.~Manocha, ``{Affect2MM: Affective Analysis
+  of Multimedia Content Using Emotion Causality},'' in \emph{Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, 2021.
+
+\bibitem{buffy}
+M.~Everingham, J.~Sivic, and A.~Zisserman, ``{``Hello! My name is ... Buffy''
+  -- Automatic Naming of Characters in TV Video},'' in \emph{British Machine
+  Vision Conference (BMVC)}, 2006.
+
+\bibitem{knock_knock}
+M.~Tapaswi, M.~Bäuml, and R.~Stiefelhagen, ``{``Knock! Knock! Who is it?''
+  Probabilistic Person Identification in TV series},'' in \emph{Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, 2012.
+
+\bibitem{face_body_voice}
+A.~Brown, V.~Kalogeiton, and A.~Zisserman, ``{Face, Body, Voice: Video
+  Person-Clustering with Multiple Modalities},'' in \emph{International
+  Conference on Computer Vision Workshops (ICCVW)}, 2021.
+
+\bibitem{brown2021corroborative}
+A.~Brown, E.~Coto, and A.~Zisserman, ``{Automated Video Labelling: Identifying
+  Faces by Corroborative Evidence},'' in \emph{Multimedia Information
+  Processing and Retrieval (MIPR)}, 2021.
+
+\bibitem{c1c}
+{Kalogeiton, Vicky, and Zisserman, Andrew}, ``Constrained video face clustering
+  using 1nn relations,'' in \emph{British Machine Vision Conference (BMVC)},
+  2020.
+
+\bibitem{nagrani2017sherlock}
+A.~Nagrani and A.~Zisserman, ``{From Benedict Cumberbatch to Sherlock Holmes:
+  Character Identification in TV series without a Script},'' in \emph{British
+  Machine Vision Conference (BMVC)}, 2017.
+
+\bibitem{local2global_sceneseg}
+A.~Rao, L.~Xu, Y.~Xiong, G.~Xu, Q.~Huang, B.~Zhou, and D.~Lin, ``{A
+  Local-to-Global Approach to Multi-modal Movie Scene Segmentation},'' in
+  \emph{Conference on Computer Vision and Pattern Recognition (CVPR)}, 2020.
+
+\bibitem{chen2021shotcol}
+S.~Chen, X.~Nie, D.~Fan, D.~Zhang, V.~Bhat, and R.~Hamid, ``{Self-Supervised
+  Learning for Scene Boundary Detection},'' in \emph{Conference on Computer
+  Vision and Pattern Recognition (CVPR)}, 2021.
+
+\bibitem{rotman2017osg}
+D.~Rotman, D.~Porat, and G.~Ashour, ``{Optimal Sequential Grouping for Robust
+  Video Scene Detection using Multiple Modalities},'' \emph{International
+  Journal of Semantic Computing}, vol.~11, no.~2, pp. 192--208, 2017.
+
+\bibitem{rasheed2003scenedet}
+Z.~Rasheed and M.~Shah, ``{Scene Detection in Hollywood Movies and TV Shows},''
+  in \emph{Conference on Computer Vision and Pattern Recognition (CVPR)}, 2003.
+
+\bibitem{tapaswi2014storygraphs}
+M.~Tapaswi, M.~Bäuml, and R.~Stiefelhagen, ``{StoryGraphs: Visualizing
+  Character Interactions as a Timeline},'' in \emph{Conference on Computer
+  Vision and Pattern Recognition (CVPR)}, 2014.
+
+\bibitem{movieqa}
+M.~Tapaswi, Y.~Zhu, R.~Stiefelhagen, A.~Torralba, R.~Urtasun, and S.~Fidler,
+  ``{MovieQA: Understanding Stories in Movies through Question-Answering},'' in
+  \emph{Conference on Computer Vision and Pattern Recognition (CVPR)}, 2016.
+
+\bibitem{tvqa}
+J.~Lei, L.~Yu, M.~Bansal, and T.~L. Berg, ``{TVQA: Localized, Compositional
+  Video Question Answering},'' in \emph{Empirical Methods in Natural Language
+  Processing (EMNLP)}, 2018.
+
+\bibitem{yu2018jsfusion}
+Y.~Yu, J.~Kim, and G.~Kim, ``{A Joint Sequence Fusion Model for Video Question
+  Answering and Retrieval},'' in \emph{European Conference on Computer Vision
+  (ECCV)}, 2018.
+
+\bibitem{lsmdc}
+A.~Rohrbach, A.~Torabi, M.~Rohrbach, N.~Tandon, C.~Pal, H.~Larochelle,
+  A.~Courville, and B.~Schiele, ``{Movie Description},'' \emph{IJCV}, vol. 123,
+  p. 94–120, 2017.
+
+\bibitem{yu2017concepts}
+Y.~Yu, H.~Ko, J.~Choi, and G.~Kim, ``{End-to-end Concept Word Detection for
+  Video Captioning, Retrieval, and Question Answering},'' in \emph{Conference
+  on Computer Vision and Pattern Recognition (CVPR)}, 2017.
+
+\bibitem{fillin}
+J.~S. Park, T.~Darrell, and A.~Rohrbach, ``{Identity-Aware Multi-Sentence Video
+  Description},'' in \emph{European Conference on Computer Vision (ECCV)},
+  2020.
+
+\bibitem{fan2019understanding}
+L.~Fan, W.~Wang, S.~Huang, X.~Tang, and S.-C. Zhu, ``{Understanding Human Gaze
+  Communication by Spatio-Temporal Graph Reasoning},'' in \emph{Conference on
+  Computer Vision and Pattern Recognition (CVPR)}, 2019.
+
+\bibitem{marin2019laeo}
+M.~J. Marin-Jimenez, V.~Kalogeiton, P.~Medina-Suarez, and A.~Zisserman,
+  ``{LAEO-Net: revisiting people Looking At Each Other in videos},'' in
+  \emph{Conference on Computer Vision and Pattern Recognition (CVPR)}, 2019.
+
+\bibitem{lirec}
+A.~Kukleva, M.~Tapaswi, and I.~Laptev, ``{Learning Interactions and
+  Relationships between Movie Characters},'' in \emph{Conference on Computer
+  Vision and Pattern Recognition (CVPR)}, 2020.
+
+\bibitem{book2movie}
+M.~Tapaswi, M.~Bäuml, and R.~Stiefelhagen, ``{Book2Movie: Aligning Video
+  scenes with Book chapters},'' in \emph{Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, 2015.
+
+\bibitem{book_movie_uoft}
+Y.~Zhu, R.~Kiros, R.~Zemel, R.~Salakhutdinov, R.~Urtasun, A.~Torralba, and
+  S.~Fidler, ``{Aligning Books and Movies: Towards Story-like Visual
+  Explanations by Watching Movies and Reading Books},'' in \emph{International
+  Conference on Computer Vision (ICCV)}, 2015.
+
+\bibitem{graph_movienet}
+Y.~Xiong, Q.~Huang, L.~Guo, H.~Zhou, B.~Zhou, and D.~Lin, ``{A Graph-based
+  Framework to Bridge Movies and Synopses},'' in \emph{International Conference
+  on Computer Vision (ICCV)}, 2019.
+
+\bibitem{lvu}
+C.-Y. Wu and P.~Krähenbühl, ``{Towards Long-Form Video Understanding},'' in
+  \emph{Conference on Computer Vision and Pattern Recognition (CVPR)}, 2021.
+
+\bibitem{condensed_movies}
+M.~Bain, A.~Nagrani, A.~Brown, and A.~Zisserman, ``{Condensed Movies: Story
+  Based Retrieval with Contextual Embeddings},'' in \emph{Asian Conference on
+  Computer Vision (ACCV)}, 2020.
+
+\bibitem{movienet}
+Q.~Huang, Y.~Xiong, A.~Rao, J.~Wang, and D.~Lin, ``{MovieNet: A Holistic
+  Dataset for Movie Understanding},'' in \emph{European Conference on Computer
+  Vision (ECCV)}, 2020.
+
+\bibitem{value_benchmark}
+L.~Li, J.~Lei, Z.~Gan, L.~Yu, Y.-C. Chen, R.~Pillai, Y.~Cheng, L.~Zhou, X.~E.
+  Wang, W.~Y. Wang, \emph{et~al.}, ``{VALUE: A Multi-Task Benchmark for
+  Video-and-Language Understanding Evaluation},'' in \emph{Advances in Neural
+  Information Processing Systems (NeurIPS): Track on Datasets and Benchmarks},
+  2021.
+
+\bibitem{pantic2005}
+M.~Pantic, M.~Valstar, R.~Rademaker, and L.~Maat, ``{Web-based database for
+  facial expression analysis},'' in \emph{International Conference on
+  Multimedia and Expo (ICME)}, 2005.
+
+\bibitem{tian2001CK}
+Y.-I. Tian, T.~Kanade, and J.~Cohn, ``{Recognizing action units for facial
+  expression analysis},'' \emph{IEEE Transactions on Pattern Analysis and
+  Machine Intelligence (PAMI)}, vol.~23, no.~2, pp. 97--115, 2001.
+
+\bibitem{lucey2010CKplus}
+P.~Lucey, J.~F. Cohn, T.~Kanade, J.~M. Saragih, Z.~Ambadar, and I.~Matthews,
+  ``{The Extended Cohn-Kanade Dataset (CK+): A complete dataset for action unit
+  and emotion-specified expression},'' in \emph{Conference on Computer Vision
+  and Pattern Recognition Workshops (CVPRW)}, 2010, pp. 94--101.
+
+\bibitem{DhallEmotiW13}
+{Dhall, Abhinav and Goecke, Roland and Joshi, Jyoti and Wagner, Michael and
+  Gedeon, Tom}, ``Emotion recognition in the wild challenge 2013,'' in
+  \emph{International Conference on Multimodal Interaction (ICMI)}, 2013.
+
+\bibitem{fer13}
+I.~J. Goodfellow, D.~Erhan, P.~L. Carrier, A.~Courville, M.~Mirza, B.~Hamner,
+  W.~Cukierski, Y.~Tang, D.~Thaler, D.-H. Lee, \emph{et~al.}, ``{Challenges in
+  representation learning: A report on three machine learning contests},'' in
+  \emph{International Conference on Neural Information Processing (ICONIPS)},
+  2013.
+
+\bibitem{afew}
+A.~Dhall, R.~Goecke, S.~Lucey, and T.~Gedeon, ``{Collecting Large, Richly
+  Annotated Facial-Expression Databases from Movies},'' \emph{IEEE Multimedia},
+  vol.~19, pp. 34--41, 2012.
+
+\bibitem{Liu2014DeeplyLD}
+M.~Liu, S.~Li, S.~Shan, R.~Wang, and X.~Chen, ``{Deeply Learning Deformable
+  Facial Action Parts Model for Dynamic Expression Analysis},'' in \emph{Asian
+  Conference on Computer Vision (ACCV)}, 2014.
+
+\bibitem{Liu2014FacialER}
+P.~Liu, S.~Han, Z.~Meng, and Y.~Tong, ``{Facial Expression Recognition via a
+  Boosted Deep Belief Network},'' in \emph{Conference on Computer Vision and
+  Pattern Recognition (CVPR)}, 2014, pp. 1805--1812.
+
+\bibitem{PandaDE}
+R.~Panda, J.~Zhang, H.~Li, J.-Y. Lee, X.~Lu, and A.~K. Roy-Chowdhury,
+  ``{Contemplating Visual Emotions: Understanding and Overcoming Dataset
+  Bias},'' in \emph{European Conference on Computer Vision (ECCV)}, V.~Ferrari,
+  M.~Hebert, C.~Sminchisescu, and Y.~Weiss, Eds., 2018.
+
+\bibitem{WeiEmotionNet}
+Z.~Wei, J.~Zhang, Z.~Lin, J.-Y. Lee, N.~Balasubramanian, M.~Hoai, and
+  D.~Samaras, ``{Learning Visual Emotion Representations From Web Data},'' in
+  \emph{Conference on Computer Vision and Pattern Recognition (CVPR)}, 2020.
+
+\bibitem{ongSENDv1}
+D.~Ong, Z.~Wu, T.~Zhi-Xuan, M.~Reddan, I.~Kahhale, A.~Mattek, and J.~Zaki,
+  ``{Modeling Emotion in Complex Stories: The Stanford Emotional Narratives
+  Dataset},'' \emph{IEEE Transactions on Affective Computing}, 2019.
+
+\bibitem{wollmer2010textContext}
+M.~W{\"o}llmer, A.~Metallinou, F.~Eyben, B.~Schuller, and S.~S. Narayanan,
+  ``{Context-sensitive Multimodal Emotion Recognition from Speech and Facial
+  Expression using Bidirectional LSTM Modeling},'' in \emph{Interspeech}, 2010.
+
+\bibitem{jiao2020HMN}
+W.~Jiao, M.~Lyu, and I.~King, ``{Real-Time Emotion Recognition via Attention
+  Gated Hierarchical Memory Network},'' in \emph{Association for the
+  Advancement of Artificial Intelligence (AAAI)}, 2020.
+
+\bibitem{sivaprasad2018icmr}
+S.~Sivaprasad, T.~Joshi, R.~Agrawal, and N.~Pedanekar, ``{Multimodal Continuous
+  Prediction of Emotions in Movies using Long Short-Term Memory Networks},'' in
+  \emph{International Conference on Multimedia Retrieval (ICMR)}, 2018.
+
+\bibitem{ghosal2019dialoguegcn}
+D.~Ghosal, N.~Majumder, S.~Poria, N.~Chhaya, and A.~Gelbukh, ``{{DialogueGCN: A
+  Graph Convolutional Neural Network for Emotion Recognition in
+  Conversation}},'' in \emph{Empirical Methods in Natural Language Processing
+  and the International Joint Conference on Natural Language Processing
+  (EMNLP-IJCNLP)}, 2019.
+
+\bibitem{zhang2019erc}
+D.~Zhang, L.~Wu, C.~Sun, S.~Li, Q.~Zhu, and G.~Zhou, ``{Modeling both Context-
+  and Speaker-Sensitive Dependence for Emotion Detection in Multi-speaker
+  Conversations},'' in \emph{International Joint Conference on Artificial
+  Intelligence (IJCAI)}, 2019.
+
+\bibitem{m2fnet}
+V.~Chudasama, P.~Kar, A.~Gudmalwar, N.~Shah, P.~Wasnik, and N.~Onoe, ``{M2FNet:
+  Multi-modal Fusion Network for Emotion Recognition in Conversation},'' in
+  \emph{Conference on Computer Vision and Pattern Recognition Workshops
+  (CVPRW)}, 2022.
+
+\bibitem{shen2021dialogXL}
+W.~Shen, J.~Chen, X.~Quan, and Z.~Xie, ``{DialogXL: All-in-One XLNet for
+  Multi-Party Conversation Emotion Recognition},'' in \emph{Association for the
+  Advancement of Artificial Intelligence (AAAI)}, 2021.
+
+\bibitem{cosmic}
+D.~Ghosal, N.~Majumder, A.~Gelbukh, R.~Mihalcea, and S.~Poria, ``{COSMIC:
+  COmmonSense knowledge for eMotion Identification in Conversations},'' in
+  \emph{Findings of Empirical Methods in Natural Language Processing (EMNLP)},
+  2020.
+
+\bibitem{zhang2020multilabelEmotionDet}
+D.~Zhang, X.~Ju, J.~Li, S.~Li, Q.~Zhu, and G.~Zhou, ``{Multi-modal Multi-label
+  Emotion Detection with Modality and Label Dependence},'' in \emph{Empirical
+  Methods in Natural Language Processing (EMNLP)}, 2020.
+
+\bibitem{sort}
+A.~Bewley, Z.~Ge, L.~Ott, F.~Ramos, and B.~Upcroft, ``{Simple Online and
+  Realtime Tracking},'' in \emph{International Conference on Image Processing
+  (ICIP)}, 2016.
+
+\bibitem{SzegedyInceptionNet2015}
+C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
+  V.~Vanhoucke, and A.~Rabinovich, ``{Going Deeper with Convolutions},'' in
+  \emph{Conference on Computer Vision and Pattern Recognition (CVPR)}, 2015.
+
+\bibitem{CaoVGGF22018}
+Q.~Cao, L.~Shen, W.~Xie, O.~M. Parkhi, and A.~Zisserman, ``{VGGFace2: A Dataset
+  for Recognising Faces across Pose and Age},'' in \emph{International
+  Conference on Automatic Face and Gesture Recognition (FG)}, 2018.
+
+\bibitem{q2l}
+S.~Liu, L.~Zhang, X.~Yang, H.~Su, and J.~Zhu, ``{Query2Label: A Simple
+  Transformer Way to Multi-Label Classification},'' \emph{arXiv:2107.10834},
+  2021.
+
+\bibitem{videobert}
+C.~Sun, A.~Myers, C.~Vondrick, K.~Murphy, and C.~Schmid, ``{VideoBERT: A Joint
+  Model for Video and Language Representation Learning},'' in
+  \emph{International Conference on Computer Vision (ICCV)}, 2019.
+
+\bibitem{roberta}
+L.~Zhuang, L.~Wayne, S.~Ya, and Z.~Jun, ``{A Robustly Optimized {BERT}
+  Pre-training Approach with Post-training},'' in \emph{Chinese National
+  Conference on Computational Linguistics}, 2021.
+
+\bibitem{vit}
+A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai,
+  T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly, J.~Uszkoreit,
+  and N.~Houlsby, ``{An Image is Worth 16x16 Words: Transformers for Image
+  Recognition at Scale},'' in \emph{International Conference on Learning
+  Representations (ICLR)}, 2021.
+
+\bibitem{layernorm}
+L.~J. Ba, J.~R. Kiros, and G.~E. Hinton, ``{Layer Normalization},''
+  \emph{arXiv: 1607.06450}, 2016.
+
+\bibitem{attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~u.
+  Kaiser, and I.~Polosukhin, ``{Attention is All you Need},'' in \emph{Advances
+  in Neural Information Processing Systems (NeurIPS)}, 2017.
+
+\bibitem{ava}
+C.~Gu, C.~Sun, D.~A. Ross, C.~Vondrick, C.~Pantofaru, Y.~Li,
+  S.~Vijayanarasimhan, G.~Toderici, S.~Ricco, R.~Sukthankar, C.~Schmid, and
+  J.~Malik, ``{AVA: A Video Dataset of Spatio-temporally Localized Atomic
+  Visual Actions},'' in \emph{Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, 2018.
+
+\bibitem{resnet}
+K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``{Deep Residual Learning for Image
+  Recognition},'' in \emph{Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, June 2016.
+
+\bibitem{imagenet}
+O.~Russakovsky, J.~Deng, H.~Su, J.~Krause, S.~Satheesh, S.~Ma, Z.~Huang,
+  A.~Karpathy, A.~Khosla, M.~Bernstein, A.~C. Berg, and L.~Fei-Fei, ``{ImageNet
+  Large Scale Visual Recognition Challenge},'' \emph{International Journal of
+  Computer Vision (IJCV)}, vol. 115, pp. 211--252, 2015.
+
+\bibitem{places365}
+B.~Zhou, A.~Lapedriza, A.~Khosla, A.~Oliva, and A.~Torralba, ``{Places: A 10
+  Million Image Database for Scene Recognition},'' \emph{IEEE Transactions on
+  Pattern Analysis and Machine Intelligence (PAMI)}, vol.~40, no.~6, pp.
+  1452--1464, 2017.
+
+\bibitem{FanMViT2021}
+H.~Fan, B.~Xiong, K.~Mangalam, Y.~Li, Z.~Yan, J.~Malik, and C.~Feichtenhofer,
+  ``{Multiscale Vision Transformers},'' in \emph{International Conference on
+  Computer Vision (ICCV)}, 2021.
+
+\bibitem{CarreiraQuoVadis2017}
+J.~Carreira and A.~Zisserman, ``{Quo Vadis, Action Recognition? A New Model and
+  the Kinetics Dataset},'' in \emph{Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, 2017.
+
+\bibitem{cascadercnn}
+Z.~Cai and N.~Vasconcelos, ``{Cascade R-CNN: Delving into High Quality Object
+  Detection},'' in \emph{Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2018.
+
+\bibitem{facefeat}
+S.~Albanie and A.~Vedaldi, ``{Learning Grimaces by Watching TV},'' in
+  \emph{British Machine Vision Conference (BMVC)}, 2016.
+
+\bibitem{sfew}
+A.~Dhall, R.~Goecke, S.~Lucey, and T.~Gedeon, ``{Static facial expression
+  analysis in tough conditions: Data, evaluation protocol and benchmark},'' in
+  \emph{International Conference on Computer Vision Workshops (ICCVW)}, 2011.
+
+\bibitem{vggface}
+O.~M. Parkhi, A.~Vedaldi, and A.~Zisserman, ``{Deep Face Recognition},'' in
+  \emph{British Machine Vision Conference (BMVC)}, 2015.
+
+\bibitem{pytorch}
+A.~Paszke, S.~Gross, F.~Massa, A.~Lerer, J.~Bradbury, G.~Chanan, T.~Killeen,
+  Z.~Lin, N.~Gimelshein, L.~Antiga, A.~Desmaison, A.~Kopf, E.~Yang, Z.~DeVito,
+  M.~Raison, A.~Tejani, S.~Chilamkurthy, B.~Steiner, L.~Fang, J.~Bai, and
+  S.~Chintala, ``{PyTorch: An Imperative Style, High-Performance Deep Learning
+  Library},'' in \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2019.
+
+\bibitem{adam}
+D.~P. Kingma and J.~Ba, ``{Adam: {A} Method for Stochastic Optimization},'' in
+  \emph{International Conference on Learning Representations (ICLR)}, Y.~Bengio
+  and Y.~LeCun, Eds., 2015.
+
+\bibitem{attendaffectnet}
+H.~T.~P. Thao, B.~Balamurali, D.~Herremans, and G.~Roig, ``{AttendAffectNet:
+  Self-Attention based Networks for Predicting Affective Responses from
+  Movies},'' in \emph{International Conference on Pattern Recognition (ICPR)},
+  2021.
+
+\bibitem{MikolovWord2Vec}
+T.~Mikolov, I.~Sutskever, K.~Chen, G.~Corrado, and J.~Dean, ``{Distributed
+  Representations of Words and Phrases and Their Compositionality},'' in
+  \emph{International Conference on Neural Information Processing Systems
+  (ICONIPS)}, 2013.
+
+\end{thebibliography}
