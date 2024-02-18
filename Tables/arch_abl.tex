@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\small
+\tabcolsep=0.5cm
+\begin{tabular}{l cc cc}
+\toprule
+\multicolumn{1}{c}{\multirow{2}{*}{Method}} & \multicolumn{2}{c}{Top-10} & \multicolumn{2}{c}{Top-25} \\
+& Scene & Char  & Scene & Char  \\
+\midrule
+Random            & 16.87\scriptsize{$\pm$0.23} & 12.49\scriptsize{$\pm$0.15} & 9.73\scriptsize{$\pm$0.101} & 5.84\scriptsize{$\pm$0.05}  \\
+\midrule
+MLP (2 Lin)       & 23.94\scriptsize{{$\pm$}0.03} & 20.39\scriptsize{$\pm$0.01} & 15.26\scriptsize{{$\pm$}0.02} & 10.57\scriptsize{$\pm$0.02} \\
+Single Tx encoder & 25.66\scriptsize{{$\pm$}0.02} & 20.95\scriptsize{$\pm$0.09} & 16.14\scriptsize{{$\pm$}0.03} & 11.08\scriptsize{$\pm$0.18} \\
+\midrule
+\modelname: 1 CLS & \emph{34.11}\scriptsize{$\pm$0.34} & \emph{23.81}\scriptsize{$\pm$0.24} & \emph{23.34}\scriptsize{$\pm$0.11} & 12.86\scriptsize{$\pm$0.11} \\
+\modelname{} (Ours) & \textbf{34.22}\scriptsize{$\pm$0.18} & \textbf{24.35}\scriptsize{$\pm$0.23} & \textbf{23.86}\scriptsize{$\pm$0.10} & \textbf{13.36}\scriptsize{$\pm$0.11} \\
+\bottomrule
+\end{tabular}
+\caption{Architecture ablation.
+Emotions are predicted at both movie scene and individual character (Char) levels.
+We see that our multimodal model significantly outperforms simpler baselines.
+Best numbers in bold, close second in italics.}
+\label{tab:arch_abl}
+\end{table}

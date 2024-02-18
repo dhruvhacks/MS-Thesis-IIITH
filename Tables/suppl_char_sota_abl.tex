@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\tabcolsep=0.09cm
+\begin{tabular}{l cc cc cc}
+\toprule
+\multicolumn{1}{c}{\multirow{2}{*}{Method}} & \multicolumn{2}{c}{Top 10}      & \multicolumn{2}{c}{Top 25}      & \multicolumn{2}{c}{Emotic}      \\
+\multicolumn{1}{c}{} & Val   & Test  & Val   & Test & Val   & Test \\
+\midrule
+Random
+& 12.49\scriptsize{{$\pm$}0.15} & 11.37\scriptsize{{$\pm$}0.14} & 5.84\scriptsize{{$\pm$}0.05} & 5.36\scriptsize{{$\pm$}0.05} & 6.40\scriptsize{{$\pm$}0.05} & 6.32\scriptsize{{$\pm$}0.05} \\
+AANet~\cite{attendaffectnet}
+& 17.43\scriptsize{{$\pm$}0.28} & 16.04\scriptsize{{$\pm$}0.19} & 8.64\scriptsize{{$\pm$}0.19} & 7.20\scriptsize{{$\pm$}0.15} & 8.53\scriptsize{{$\pm$}0.17} & 7.75\scriptsize{{$\pm$}0.11} \\
+M2Fnet~\cite{m2fnet}
+& 20.82\scriptsize{{$\pm$}0.28} & 19.01\scriptsize{{$\pm$}0.45} & 10.67\scriptsize{{$\pm$}0.38}  & 9.71\scriptsize{{$\pm$}0.34} & 11.30\scriptsize{{$\pm$}0.35}  & 9.92\scriptsize{{$\pm$}0.02} \\
+\midrule
+\modelname{} (Ours)
+& \textbf{24.35}\scriptsize{{$\pm$}0.23} & \textbf{22.31}\scriptsize{{$\pm$}0.11} & \textbf{13.36}\scriptsize{{$\pm$}0.11} & \textbf{11.71}\scriptsize{{$\pm$}0.05} & \textbf{12.29}\scriptsize{{$\pm$}0.08} & \textbf{11.76}\scriptsize{{$\pm$}0.10} \\ \bottomrule
+\end{tabular}
+\vspace{-2mm}
+\caption{Comparison against SoTA for character-level predictions. \emph{AANet} denotes AttendAffectNet.}
+\label{tab:char_sota_abl}
+\end{table*}

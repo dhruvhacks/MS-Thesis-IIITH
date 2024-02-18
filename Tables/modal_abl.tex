@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\small
+\tabcolsep=0.3cm
+\begin{tabular}{l cccc cccc}
+\toprule
+&\multirow{2}{*}{$V_r$} & \multirow{2}{*}{$V_m$} & \multirow{2}{*}{$D$} & \multirow{2}{*}{$C$} & \multicolumn{2}{c}{Top 10 (mAP)} & \multicolumn{2}{c}{Top 25 (mAP)} \\
+&           &            &            &             & Scene           & Char           & Scene           & Char           \\
+\midrule
+1&\dingcheck &      -     &    -       &      -     & 22.81{\tiny $\pm$0.02} & 15.90{\tiny $\pm$0.19}& 14.85{\tiny $\pm$0.02} & 7.98{\tiny $\pm$0.05} \\
+2&    -      & \dingcheck &    -       &      -     & 25.73{\tiny $\pm$0.02} & 17.88{\tiny $\pm$0.12}& 16.11{\tiny $\pm$0.05} & 8.96{\tiny $\pm$0.12} \\
+3&    -      &      -     & \dingcheck &      -     & 27.28{\tiny $\pm$0.01} & 20.25{\tiny $\pm$0.14}& 20.20{\tiny $\pm$0.08} & 11.09{\tiny $\pm$0.12}\\
+4&    -      &      -     &    -       & \dingcheck & 31.38{\tiny $\pm$0.40} & 21.22{\tiny $\pm$0.50}& 20.32{\tiny $\pm$0.05} & 11.23{\tiny $\pm$0.14}\\
+\midrule
+5&\dingcheck &      -     & \dingcheck &      -     & 27.19{\tiny $\pm$0.07} & 19.45{\tiny $\pm$0.10}& 19.72{\tiny $\pm$0.03} & 10.67{\tiny $\pm$0.08}\\
+6&    -      & \dingcheck & \dingcheck &      -     & 28.93{\tiny $\pm$0.02} & 21.41{\tiny $\pm$0.15}& 21.29{\tiny $\pm$0.05} & 12.03{\tiny $\pm$0.23}\\  
+7&    -      &      -     & \dingcheck & \dingcheck & 33.59{\tiny $\pm$0.10} & 23.54{\tiny $\pm$0.16}& 23.40{\tiny $\pm$0.09} & 13.01{\tiny $\pm$0.08}\\  
+\midrule
+8&\dingcheck &      -     & \dingcheck & \dingcheck & 33.60{\tiny $\pm$0.02} & 22.89{\tiny $\pm$0.02}& 22.76{\tiny $\pm$0.02} & 12.21{\tiny $\pm$0.02}\\
+9&    -      & \dingcheck & \dingcheck & \dingcheck & \textbf{34.22} {\tiny $\pm$0.18} & \textbf{24.35}{\tiny $\pm$0.23}& \textbf{23.86}{\tiny $\pm$0.10} & \textbf{13.36}{\tiny $\pm$0.11}\\  
+\bottomrule
+\end{tabular}
+\caption{
+Modality ablation.
+$V_{r}$: ResNet50 (Places365),
+$V_{m}$: MViT (Kinetics400),
+$D$: Dialog, and
+$C$: Character.}
+\label{tab:modal_abl}
+\end{table}

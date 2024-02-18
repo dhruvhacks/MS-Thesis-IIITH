@@ -1,0 +1,38 @@
+\begin{table*}[tbp]
+\centering
+\tabcolsep=0.10cm
+\begin{tabular}{l ccc | ccc | cc | cc cc}
+\toprule
+& \multicolumn{3}{c|}{Video} & \multicolumn{3}{c|}{Character} & \multicolumn{2}{c|}{Dialog} & \multicolumn{4}{c}{Metrics (mAP)} \\
+& \multicolumn{1}{c}{MViT} & \multicolumn{1}{c}{R50} & \multicolumn{1}{c|}{R152} & \multicolumn{1}{c}{R50} & \multicolumn{1}{c}{VGG-M} & \multicolumn{1}{c|}{IRv1} & \multicolumn{1}{c}{RB} & \multicolumn{1}{c|}{RB} & \multicolumn{2}{c}{Top-10} & \multicolumn{2}{c}{Top-25} \\
+& \multicolumn{1}{c}{K400} & \multicolumn{1}{c}{P365} & \multicolumn{1}{c|}{INet} & \multicolumn{1}{c}{FER} & \multicolumn{1}{c}{FER} & \multicolumn{1}{c|}{VGG-F} & \multicolumn{1}{c}{FT} & \multicolumn{1}{c|}{PT} & \multicolumn{1}{c}{Scene} & \multicolumn{1}{c}{Char} & \multicolumn{1}{c}{Scene} & \multicolumn{1}{c}{Char} \\ \midrule
+1 & - & \dingcheck & - & - & - & \dingcheck & - & \dingcheck & 25.07\scriptsize{{$\pm$}0.12} & 15.48\scriptsize{{$\pm$}0.15} & 16.41\scriptsize{{$\pm$}0.24} & 8.31\scriptsize{{$\pm$}0.17} \\
+2 & - & - & \dingcheck & - & - & \dingcheck & - & \dingcheck & 25.85\scriptsize{{$\pm$}0.24} & 15.63\scriptsize{{$\pm$}0.21} & 16.45\scriptsize{{$\pm$}0.09} & 8.31\scriptsize{{$\pm$}0.09} \\
+3 & - & - & \dingcheck & - & \dingcheck & - & - & \dingcheck & 29.20\scriptsize{{$\pm$}0.22} & 19.88\scriptsize{{$\pm$}0.27} & 18.93\scriptsize{{$\pm$}0.38} & 10.16\scriptsize{{$\pm$}0.17} \\
+4 & \dingcheck & - & - & - & - & \dingcheck & - & \dingcheck & 29.27\scriptsize{{$\pm$}0.08} & 18.07\scriptsize{{$\pm$}0.22} & 18.35\scriptsize{{$\pm$}0.09} & 0.09\scriptsize{{$\pm$}0.08} \\
+5 & - & \dingcheck & - & - & \dingcheck & - & - & \dingcheck & 29.30\scriptsize{{$\pm$}0.21} & 19.73\scriptsize{{$\pm$}0.17} & 19.05\scriptsize{{$\pm$}0.19} & 10.31\scriptsize{{$\pm$}0.00} \\
+6 & \dingcheck & - & - & - & \dingcheck & - & - & \dingcheck & 29.34\scriptsize{{$\pm$}0.08} & 20.50\scriptsize{{$\pm$}0.04} & 19.07\scriptsize{{$\pm$}0.19} & 10.34\scriptsize{{$\pm$}0.17} \\
+7 & - & \dingcheck & - & - & - & \dingcheck & \dingcheck & - & 29.34\scriptsize{{$\pm$}0.17} & 19.49\scriptsize{{$\pm$}0.03} & 20.73\scriptsize{{$\pm$}0.08} & 10.75\scriptsize{{$\pm$}0.02} \\
+8 & - & - & \dingcheck & - & - & \dingcheck & \dingcheck & - & 29.47\scriptsize{{$\pm$}0.14} & 19.29\scriptsize{{$\pm$}0.10} & 20.74\scriptsize{{$\pm$}0.11} & 10.79\scriptsize{{$\pm$}0.07} \\
+9 & - & \dingcheck & - & \dingcheck & - & - & - & \dingcheck & 29.69\scriptsize{{$\pm$}0.38} & 20.25\scriptsize{{$\pm$}0.14} & 20.16\scriptsize{{$\pm$}0.29} & 11.06\scriptsize{{$\pm$}0.12} \\
+10 & - & - & \dingcheck & \dingcheck & - & - & - & \dingcheck & 30.19\scriptsize{{$\pm$}0.38} & 20.27\scriptsize{{$\pm$}0.26} & 19.83\scriptsize{{$\pm$}0.07} & 11.06\scriptsize{{$\pm$}0.16} \\
+11 & \dingcheck & - & - & \dingcheck & - & - & - & \dingcheck & 31.39\scriptsize{{$\pm$}0.34} & 21.18\scriptsize{{$\pm$}0.18} & 20.88\scriptsize{{$\pm$}0.28} & 11.46\scriptsize{{$\pm$}0.08} \\
+12 & \dingcheck & - & - & - & \dingcheck & - & \dingcheck & - & 31.50\scriptsize{{$\pm$}0.36} & 21.60\scriptsize{{$\pm$}0.09} & 21.49\scriptsize{{$\pm$}0.30} & 11.64\scriptsize{{$\pm$}0.20} \\
+13 & - & - & \dingcheck & - & \dingcheck & - & \dingcheck & - & 31.96\scriptsize{{$\pm$}0.20} & 21.81\scriptsize{{$\pm$}0.37} & 21.28\scriptsize{{$\pm$}0.25} & 11.58\scriptsize{{$\pm$}0.26} \\
+14 & \dingcheck & - & - & - & - & \dingcheck & \dingcheck & - & 32.23\scriptsize{{$\pm$}0.07} & 21.45\scriptsize{{$\pm$}0.07} & 22.10\scriptsize{{$\pm$}0.11} & 11.63\scriptsize{{$\pm$}0.06} \\
+15 & - & \dingcheck & - & - & \dingcheck & - & \dingcheck & - & 32.42\scriptsize{{$\pm$}0.26} & 22.32\scriptsize{{$\pm$}0.27} & 21.45\scriptsize{{$\pm$}0.17} & 11.62\scriptsize{{$\pm$}0.05} \\
+16 & - & - & \dingcheck & \dingcheck & - & - & \dingcheck & - & 33.44\scriptsize{{$\pm$}0.33} & 22.89\scriptsize{{$\pm$}0.24} & 22.75\scriptsize{{$\pm$}0.18} & 12.52\scriptsize{{$\pm$}0.12} \\
+17 & - & \dingcheck & - & \dingcheck & - & - & \dingcheck & - & 33.46\scriptsize{{$\pm$}0.21} & 22.98\scriptsize{{$\pm$}0.16} & 22.69\scriptsize{{$\pm$}0.22} & 12.48\scriptsize{{$\pm$}0.20} \\
+18 & \dingcheck & - & - & \dingcheck & - & - & \dingcheck & - & \textbf{34.22}\scriptsize{{$\pm$}0.18} & \textbf{24.35}\scriptsize{{$\pm$}0.23} & \textbf{23.86}\scriptsize{{$\pm$}0.10} & \textbf{13.36}\scriptsize{{$\pm$}0.11} \\ \bottomrule
+\end{tabular}
+\caption{Extended feature ablations. The different feature backbones are 
+(MViT, K400): MViT pretrained on Kinetics400,
+(R50, P365): ResNet50 on Places365,
+(R152, INet): ResNet152 on ImageNet,
+(R50, FER): ResNet50 on Facial Expression Recognition (FER),
+(VGG-M, FER): VGG-M on FER,
+(IRv1, VGG-F): InceptionResNet-v1 trained on VGG-Face dataset,
+(RB, FT): pretrained RoBERTa finetuned for emotion recognition and
+(RB, PT): pretrained RoBERTa. Best numbers are in bold.}
+\label{tab:feat_abl}
+\end{table*}
